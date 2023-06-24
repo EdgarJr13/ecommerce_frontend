@@ -1,15 +1,36 @@
 <template>
     <div>
-        <h2>Lista de Produtos</h2>
-        <ul>
-            <li v-for="produto in produtos" :key="produto.id">
-                {{  produto.nome }} - {{  produto.descricao }} - {{ produto.valor }}
-                <button @click="editarProduto(produto)">Editar</button> 
-                <button @click="excluirProduto(produto.id)">Excluir</button> 
-            </li>
-        </ul>
+      <v-container>
+        <v-row>
+          <v-col
+            v-for="produto in produtos"
+            :key="produto.id"
+            cols="12"
+            sm="6"
+            md="4"
+            lg="3"
+          >
+            <v-card>
+              <v-img :src="produto.imagem" height="200"></v-img>
+              <v-card-title>{{ produto.nome }}</v-card-title>
+              <v-card-text>
+                <p>{{ produto.descricao }}</p>
+                <p>R${{ produto.valor }},00</p>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn color="primary" @click="editarProduto(produto)">
+                  Editar Produto
+                </v-btn>
+                <v-btn color="primary" @click="excluirProduto(produto.id)">
+                  Excluir Produto
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
     </div>
-</template>
+  </template>
 
 <script>
 import axios from 'axios';
