@@ -1,0 +1,56 @@
+/* App.vue */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* HomePage.vue */
+.home-title {
+  font-size: 32px;
+  color: #6A1B9A; /* Cor lilás */
+  margin-bottom: 20px;
+}
+
+/* ProdutosList.vue */
+.produtos-list-title {
+  font-size: 24px;
+  color: #6A1B9A; /* Cor lilás */
+  margin-bottom: 20px;
+}
+
+.produtos-list-item {
+  background-color: #FFFFFF; /* Cor branca */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.produtos-list-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.produtos-list-item p {
+  font-size: 16px;
+  color: #888888;
+}
+
+/* CriarProduto.vue e EditarProduto.vue */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #6A1B9A; /* Cor lilás */
+  margin-bottom: 20px;
+}
+
+/* Vuetify Theme */
+.theme--light {
+  primary: #6A1B9A; /* Cor lilás */
+  secondary: #FFFFFF; /* Cor branca */
+}
