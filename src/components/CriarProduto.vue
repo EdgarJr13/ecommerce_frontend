@@ -8,7 +8,7 @@
             <input type="text" id="descricao" v-model="produto.descricao" required>
             <label for="valor">Valor:</label>
             <input type="number" id="valor" v-model="produto.valor" required>
-            <button @click=criarProduto() type="submit">Salvar</button>
+            <button type="submit">Salvar</button>
         </form>
     </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         criarProduto() {
-            axios.post('http://localhost:8080/api/produto/novo_produto', this.produto)
+            axios.post('http://localhost:8080/api/produtos/novo_produto', this.produto)
                 .then(() => {
                     this.$router.push({ name: 'ProdutosList' });
                 })
