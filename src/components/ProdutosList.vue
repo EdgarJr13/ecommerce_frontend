@@ -5,13 +5,15 @@
             <li v-for="produto in produtos" :key="produto.id">
                 {{  produto.nome }} - {{  produto.descricao }} - {{ produto.valor }}
                 <button @click="editarProduto(produto)">Editar</button> 
-                <button @click="excluirProduto(produto)">Excluir</button> 
+                <button @click="excluirProduto(produto.id)">Excluir</button> 
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -23,7 +25,7 @@ export default {
     },
     methods: {
         listarProdutos() {
-            axios.get('/api/produtos')
+            axios.get('http://localhost:8080/api/produtos')
                 .then(response => {
                     this.produtos = response.data;
                 })
@@ -34,8 +36,10 @@ export default {
         editarProduto(produto) {
             this.$router.push({ name: 'EditarProduto', params: { id: produto.id } });
         },
+        // eslint-disable-next-line no-unused-vars
         excluirProduto(produtoId) {
-            axios.delete('/api/produtos/deletar_produto/${produtoId}')
+
+            axios.delete('http://localhost:8080/api/produtos/deletar_produto/${produtoId}')
                 .then(() => {
                     this.listarProdutos();
                 })
