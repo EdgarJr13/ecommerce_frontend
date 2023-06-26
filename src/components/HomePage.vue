@@ -14,10 +14,10 @@
                         </v-card-text>
                         <v-card-actions align="center">
                             <v-col cols="12" sm="6" md="4">
-                                <v-btn collor="primary" class="button-primary">Ver Produtos</v-btn>
+                                <v-btn class="button-primary">Ver Produtos</v-btn>
                             </v-col>
                             <v-col cols="12" sm="6" md="4">
-                                <v-btn collor="primary" class="button-primary">Inserir novo Produto</v-btn>
+                                <v-btn class="button-primary" to="/produtos/criar">Inserir novo Produto</v-btn>
                             </v-col>
                         </v-card-actions>
                     </v-card>
