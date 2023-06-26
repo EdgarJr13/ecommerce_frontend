@@ -2,14 +2,7 @@
     <div>
       <v-container>
         <v-row>
-          <v-col
-            v-for="produto in produtos"
-            :key="produto.id"
-            cols="12"
-            sm="6"
-            md="4"
-            lg="3"
-          >
+          <v-col v-for="produto in produtos" :key="produto.id" cols="12" sm="6" md="4" lg="3">
             <v-card>
               <v-img :src="produto.imagem" height="200"></v-img>
               <v-card-title>{{ produto.nome }}</v-card-title>
@@ -57,11 +50,10 @@ export default {
         editarProduto(produto) {
             this.$router.push({ name: 'EditarProduto', params: { id: produto.id } });
         },
-        // eslint-disable-next-line no-unused-vars
         excluirProduto(produtoId) {
-
-            axios.delete('http://localhost:8080/api/produtos/deletar_produto/${produtoId}')
+            axios.delete('http://localhost:8080/api/produtos/deletar_produto/' + produtoId)
                 .then(() => {
+                    alert('Produto deletado com sucesso.');
                     this.listarProdutos();
                 })
                 .catch(error => {
