@@ -1,25 +1,56 @@
 <template>
     <div class="home-page">
         <v-container class="home-container">
-            <v-row align="center" justify="center">
-                <v-col cols="12" sm="8" md="6" lg="4">
-                    <v-card class="home-card">
-                        <v-card-title class="home-title">
-                            <h6>Bem-vindo à nossa loja de blusas de time!</h6>
-                        </v-card-title>
-                        <v-card-text>
-                            <p>
-                                Aqui você encontra uma variedade de blusas de times para os apaixonados por futebol.
-                            </p>
-                        </v-card-text>
-                        <v-card-actions align="center">
-                            <v-col cols="12" sm="6" md="4">
-                                <v-btn class="button-primary">Ver Produtos</v-btn>
-                            </v-col>
-                            <v-col cols="12" sm="6" md="4">
-                                <v-btn class="button-primary" to="/produtos/criar">Inserir novo Produto</v-btn>
-                            </v-col>
-                        </v-card-actions>
+            <v-row justify="center">
+                <v-img
+                max-width="500"
+                cover
+                src="../assets/logo.png"
+                class="logo-image"
+                ></v-img>
+            </v-row>
+            <v-row>
+                <v-text-field
+                    v-model="searchQuery"
+                    label="Buscar Produtos"
+                    append-icon="mdi-magnify"
+                    @keydown.enter="searchProducts"
+                ></v-text-field>
+            </v-row>
+            <v-row>
+                <v-col cols="12">
+                    <v-spacer></v-spacer>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="4">
+                    <v-card @click="('CPU e Memória')">
+                    <v-card-title>CPU e Memória</v-card-title>
+                    <v-card-text>
+                        <p>Placa-mãe</p>
+                        <p>Processador</p>
+                        <p>Cooler</p>
+                    </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col cols="4">
+                    <v-card @click="('Armazenamento')">
+                    <v-card-title>Armazenamento</v-card-title>
+                    <v-card-text>
+                        <p>SSD</p>
+                        <p>Pendrive</p>
+                        <p>HD Sata</p>
+                    </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col cols="4">
+                    <v-card @click="('Software')">
+                    <v-card-title>Software</v-card-title>
+                    <v-card-text>
+                        <p>Sistema Operacional</p>
+                        <p>Aplicativo</p>
+                        <p>Jogos</p>
+                    </v-card-text>
                     </v-card>
                 </v-col>
             </v-row>
@@ -29,7 +60,17 @@
   
 <script>
 export default {
-name: 'HomePage',
+    data() {
+        return {
+            searchQuery: '',
+        };
+    },
+    methods: {
+        searchProducts() {
+            this.$store.dispatch('buscarProdutos', this.searchQuery);
+            this.$router.push('/lista-produtos')
+        },
+    },
 };
 </script>
 
@@ -58,6 +99,10 @@ name: 'HomePage',
   font-size: 32px;
   color: #6A1B9A; /* Cor lilás */
   margin-bottom: 20px;
+}
+
+.logo-image {
+    margin-bottom: 100px;
 }
 
 .button-primary {
