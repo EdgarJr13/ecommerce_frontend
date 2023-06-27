@@ -9,6 +9,7 @@
                         <v-card-text>R${{ produto.valor }},00</v-card-text>
                         <v-card-actions>
                             <v-btn color="primary" @click="adicionarAoCarrinho()">
+                                <v-icon>mdi-cart</v-icon>
                                 Adicionar ao Carrinho
                             </v-btn>
                         </v-card-actions>

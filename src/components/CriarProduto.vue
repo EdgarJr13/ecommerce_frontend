@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h2>Criar Novo Produto</h2>
         <v-form class="mt-10">
             <v-text-field label="Nome" v-model="nome" class="form-field"></v-text-field>
             <v-text-field label="Descrição" v-model="descricao" class="form-field"></v-text-field>
@@ -28,9 +27,7 @@ export default {
         return {
             nome: '',
             descricao: '',
-            valor: 0,
-            // tamanho: '',
-            // tamanhos: ['P', 'M', 'G', 'GG']
+            valor: '',
         }
     },
     methods: {
@@ -51,6 +48,7 @@ export default {
                 //     this.$router.push({ name: 'ProdutosList' });
                 // })
                 .then(() => 
+                    this.$emit('produtoCriado'),
                     this.nome = '',
                     this.descricao = '',
                     this.valor = '',

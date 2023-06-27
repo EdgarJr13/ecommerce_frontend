@@ -23,17 +23,38 @@
           </v-card>
         </v-col>
       </v-row>
+
+      <v-btn fab color="primary" class="fab-button" @click="dialogCriarProduto = true">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
+
+      <v-dialog v-model="dialogCriarProduto" max-width="500px">
+        <v-card>
+          <v-card-title class="text-h5">Criar novo Produto</v-card-title>
+          <v-card-text>
+            <CriarProduto @produtoCriado="listarProdutos" />
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary" @click="dialogCriarProduto = false">Fechar</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-container>
   </div>
 </template>
 
 <script>
+import CriarProduto from './CriarProduto.vue'
 import axios from 'axios';
 
 export default {
+  components: {
+    CriarProduto
+  },
     data() {
         return {
-            produtos: []
+            produtos: [],
+            dialogCriarProduto: false
         };
     },
     mounted() {
