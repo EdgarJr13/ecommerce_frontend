@@ -44,7 +44,7 @@ export default {
 
 <style>
 .lista-produtos-page {
-  margin-top: 64px; /* Altura da navbar, ajuste conforme necessário */
+  margin-top: 90px; /* Altura da navbar, ajuste conforme necessário */
 }
 </style>
   

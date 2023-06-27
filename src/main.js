@@ -1,10 +1,11 @@
-import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router/index'
+import { createApp } from 'vue'
 import { loadFonts } from './plugins/webfontloader'
 import { createVuetify } from 'vuetify'
-import 'vuetify/dist/vuetify.css'
+import router from './router/index'
 import store from './store'
+import 'vuetify/dist/vuetify.css'
+import '@mdi/font/css/materialdesignicons.css';
 
 
 loadFonts()
