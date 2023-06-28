@@ -23,10 +23,11 @@
           </v-card>
         </v-col>
       </v-row>
-
-      <v-btn fab color="primary" class="fab-button" @click="dialogCriarProduto = true">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
+      <v-container class="text-center">
+        <v-btn fab color="primary" class="fab-button" @click="dialogCriarProduto = true">
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </v-container>
 
       <v-dialog v-model="dialogCriarProduto" max-width="500px">
         <v-card>
