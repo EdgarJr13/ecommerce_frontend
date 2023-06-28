@@ -1,24 +1,64 @@
-# ecommerce-frontend
+# Ecommerce Frontend
 
-## Project setup
-```
+Este é o frontend do sistema de ecommerce desenvolvido por mim como parte do desafio SuperSim Challenge.
+
+## Funcionalidades
+
+- Exibir lista de produtos disponíveis
+- Criar novos produtos
+- Editar produtos existentes
+- Excluir produtos
+
+## Tecnologias utilizadas
+
+- Vue.js: framework JavaScript para construção de interfaces de usuário
+- Vuetify: biblioteca de componentes para Vue.js com Material Design
+- Axios: cliente HTTP para realizar requisições ao backend
+
+## Requisitos
+
+- Node.js (versão 12 ou superior)
+- NPM (gerenciador de pacotes do Node.js)
+
+## Como executar o projeto
+
+1. Clone o repositório para a sua máquina local:
+git clone <URL_DO_REPOSITORIO>
+
+2. Navegue até o diretório do projeto:
+cd ecommerce-frontend
+
+3. Instale as dependências do projeto:
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+4. Configure a URL do backend:
+Abra o arquivo `src/main.js` e localize a linha onde está definida a variável `axios.defaults.baseURL`. Altere o valor dessa variável para a URL do seu backend.
+
+5. Inicie o servidor de desenvolvimento:
 npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+6. Acesse a aplicação no navegador:
+Abra o navegador e visite o seguinte endereço: `http://localhost:8081`
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Como usar a aplicação
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Acesse a página "Gerenciar Produtos" para visualizar, editar e excluir produtos existentes.
+- Clique no botão "+" para adicionar um novo produto ao estoque.
+- Ao clicar no botão "Editar" de um produto, um Dialog será aberto para permitir a edição dos campos do produto.
+- Ao clicar no botão "Deletar" de um produto, o produto será excluído.
+- A funcionalidade de adicionar produtos ao carrinho será implementada futuramente.
+
+## Implementações futuras
+Devido ao tempo para entrega do projeto, alguns estudos meus não foram aplicados pois não haveria tempo hábil para os mesmos. As implementações seriam:
+
+
+- Implementação de funcionalidade para gerar pedidos, utilizando a dinâmica de "carrinho" para guardar os produtos desejados para um eventual fechamento de pedido. Avalio que mais um dia seria suficiente para a implementação.
+- Utilização de Alerts mais robustos, do próprio Vuetify, em detrimento aos Aletrs nativos do JavaScript utilizados. Também avalio que mais um dia de desenvolvimento seria suficiente para o mesmo.
+
+## Contribuição
+
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver alguma sugestão, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
