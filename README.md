@@ -31,13 +31,10 @@ cd ecommerce-frontend
 3. Instale as dependências do projeto:
 npm install
 
-4. Configure a URL do backend:
-Abra o arquivo `src/main.js` e localize a linha onde está definida a variável `axios.defaults.baseURL`. Altere o valor dessa variável para a URL do seu backend.
-
-5. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 npm run serve
 
-6. Acesse a aplicação no navegador:
+5. Acesse a aplicação no navegador:
 Abra o navegador e visite o seguinte endereço: `http://localhost:8081`
 
 ## Como usar a aplicação
@@ -46,6 +43,7 @@ Abra o navegador e visite o seguinte endereço: `http://localhost:8081`
 - Clique no botão "+" para adicionar um novo produto ao estoque.
 - Ao clicar no botão "Editar" de um produto, um Dialog será aberto para permitir a edição dos campos do produto.
 - Ao clicar no botão "Deletar" de um produto, o produto será excluído.
+- Utilize a barra de pesquisa da página inicial para buscar um produto em específico.
 - A funcionalidade de adicionar produtos ao carrinho será implementada futuramente.
 
 ## Implementações futuras
