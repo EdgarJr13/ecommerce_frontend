@@ -24,6 +24,11 @@
 import { mapGetters } from 'vuex';
 
 export default {
+    methods: {
+        adicionarAoCarrinho() {
+            alert("A funcionalidade de adicionar ao carrinho será implementada futuramente.");
+        }
+    },
     computed: {
         ...mapGetters(['getProdutos']),
         produtos() {
