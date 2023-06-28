@@ -23,7 +23,7 @@ Este é o frontend do sistema de ecommerce desenvolvido por mim como parte do de
 ## Como executar o projeto
 
 1. Clone o repositório para a sua máquina local:
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/EdgarJr13/ecommerce_frontend.git
 
 2. Navegue até o diretório do projeto:
 cd ecommerce-frontend
