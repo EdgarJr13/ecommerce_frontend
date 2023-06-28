@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import GerenciarProdutos from '@/components/GerenciarProdutos.vue';
-import CriarProduto from '@/components/CriarProduto.vue';
-import EditarProduto from '@/components/EditarProduto.vue';
+import CriarProdutoDialog from '@/components/dialogs/CriarProdutoDialog.vue';
+import EditarProdutoDialog from '@/components/dialogs/EditarProdutoDialog.vue';
 import HomePage from '@/components/HomePage.vue';
 import ListaProdutos from '@/components/ListaProdutos.vue';
 
 const routes = [
     {path: '/', component: HomePage, name: "Home" },
     {path: '/gerenciar-produtos', component: GerenciarProdutos, name: 'GerenciarProdutos' },
-    {path: '/produtos/criar', component: CriarProduto, name: 'CriarProduto' },
-    {path: '/produtos/editar/:id', component: EditarProduto, name: 'EditarProduto' },
+    {path: '/produtos/criar', component: CriarProdutoDialog, name: 'CriarProdutoDialog' },
+    {path: '/produtos/editar/:id', component: EditarProdutoDialog, name: 'EditarProdutoDialog' },
     {path: '/lista-produtos/', component: ListaProdutos, name: 'ListaProdutos' },
 ];
 

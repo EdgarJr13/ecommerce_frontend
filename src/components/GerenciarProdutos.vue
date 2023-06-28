@@ -8,7 +8,7 @@
             <v-card-title>{{ produto.nome }}</v-card-title>
             <v-card-text>
               <p>{{ produto.descricao }}</p>
-              <p>R${{ produto.valor }},00</p>
+              <p>R${{ produto.valor }}</p>
             </v-card-text>
             <v-card-actions>
               <v-btn color="primary" @click="editarProduto(produto)">
@@ -32,29 +32,41 @@
         <v-card>
           <v-card-title class="text-h5">Criar novo Produto</v-card-title>
           <v-card-text>
-            <CriarProduto @produtoCriado="listarProdutos" />
+            <CriarProdutoDialog @produtoCriado="listarProdutos" />
           </v-card-text>
           <v-card-actions>
             <v-btn color="primary" @click="dialogCriarProduto = false">Fechar</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
+
+      <editar-produto-dialog
+        v-if="dialogEditarProduto"
+        :produto="produtoParaEditar"
+        @produtoAtualizado="atualizarProduto"
+        @fecharDialog="dialogEditarProduto = false"
+      ></editar-produto-dialog>
+
     </v-container>
   </div>
 </template>
 
 <script>
-import CriarProduto from './CriarProduto.vue'
+import CriarProdutoDialog from './dialogs/CriarProdutoDialog.vue'
+import EditarProdutoDialog from './dialogs/EditarProdutoDialog.vue'
 import axios from 'axios';
 
 export default {
   components: {
-    CriarProduto
+    CriarProdutoDialog,
+    EditarProdutoDialog
   },
     data() {
         return {
             produtos: [],
-            dialogCriarProduto: false
+            dialogCriarProduto: false,
+            dialogEditarProduto: false,
+            produtoParaEditar: null
         };
     },
     mounted() {
@@ -71,7 +83,8 @@ export default {
                 });
         },
         editarProduto(produto) {
-            this.$router.push({ name: 'EditarProduto', params: { id: produto.id } });
+          this.produtoParaEditar = {...produto};
+          this.dialogEditarProduto = true;
         },
         excluirProduto(produtoId) {
             axios.delete('http://localhost:8080/api/produtos/deletar_produto/' + produtoId)
@@ -82,6 +95,18 @@ export default {
                 .catch(error => {
                     console.error(error);
                 });
+        },
+        atualizarProduto(produtoAtualizado) {
+          const produtoId = produtoAtualizado.id;
+          axios
+            .put(`http://localhost:8080/api/produtos/atualizar_produto/${produtoId}`, produtoAtualizado)
+            .then(() => {
+              alert('Produto atualizado com sucesso.');
+              this.listarProdutos();
+            })
+            .catch(error => {
+              console.error(error);
+            });
         } 
     }
 };

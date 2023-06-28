@@ -6,7 +6,7 @@
                     <v-card class="mb-4">
                         <v-card-title>{{ produto.nome }}</v-card-title>
                         <v-card-text>{{ produto.descricao }}</v-card-text>
-                        <v-card-text>R${{ produto.valor }},00</v-card-text>
+                        <v-card-text>R${{ produto.valor }}</v-card-text>
                         <v-card-actions>
                             <v-btn color="primary" @click="adicionarAoCarrinho()">
                                 <v-icon>mdi-cart</v-icon>
