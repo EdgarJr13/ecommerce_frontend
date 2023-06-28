@@ -24,7 +24,7 @@
             </v-row>
             <v-row>
                 <v-col cols="4">
-                    <v-card @click="('CPU e Memória')">
+                    <v-card>
                     <v-card-title>CPU e Memória</v-card-title>
                     <v-card-text>
                         <p>Placa-mãe</p>
@@ -34,7 +34,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="4">
-                    <v-card @click="('Armazenamento')">
+                    <v-card>
                     <v-card-title>Armazenamento</v-card-title>
                     <v-card-text>
                         <p>SSD</p>
@@ -44,7 +44,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="4">
-                    <v-card @click="('Software')">
+                    <v-card>
                     <v-card-title>Software</v-card-title>
                     <v-card-text>
                         <p>Sistema Operacional</p>
